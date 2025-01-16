@@ -8,28 +8,46 @@ body {
     line-height: 1.6;
 }
 
+/* Header with background image and blur effect */
 header {
-    background: linear-gradient(to bottom, #4caf50, #388e3c);
+    position: relative;
+    background: url('header-background.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 20px 10px;
+    padding: 60px 20px;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    backdrop-filter: blur(4px); /* Blur effect */
+    z-index: 1;
 }
 
 header .header-content {
+    position: relative;
+    z-index: 2; /* Text appears above blur */
     max-width: 900px;
     margin: auto;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin: 0;
+    opacity: 0.9;
 }
 
+/* Section Styles */
 .section {
     padding: 20px 10px;
     max-width: 900px;
@@ -50,26 +68,6 @@ p {
     margin-bottom: 15px;
 }
 
-ul.links {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.links li {
-    margin-bottom: 10px;
-}
-
-ul.links a {
-    text-decoration: none;
-    color: #388e3c;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-ul.links a:hover {
-    color: #1b5e20;
-}
-
 /* Gallery */
 .gallery {
     display: flex;
@@ -86,7 +84,7 @@ ul.links a:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Video */
+/* Video Section */
 .video-container {
     text-align: center;
     padding: 10px;
