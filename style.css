@@ -1,33 +1,53 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f8f9fa;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background: linear-gradient(to bottom, #4caf50, #388e3c);
+    color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px 10px;
 }
 
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+header .header-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 .section {
+    padding: 20px 10px;
+    max-width: 900px;
+    margin: auto;
     margin-bottom: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    color: #4CAF50;
+h2 {
+    color: #4caf50;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: 15px;
 }
 
 ul.links {
@@ -36,33 +56,59 @@ ul.links {
 }
 
 ul.links li {
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 ul.links a {
-    color: #4CAF50;
     text-decoration: none;
+    color: #388e3c;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 ul.links a:hover {
-    text-decoration: underline;
+    color: #1b5e20;
 }
 
+/* Gallery */
 .gallery {
     display: flex;
     gap: 10px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .gallery img {
-    width: 30%;
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-footer {
+/* Video */
+.video-container {
     text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
+    padding: 10px;
+    background: #eee;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #4caf50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #c8e6c9;
 }
