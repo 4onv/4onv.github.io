@@ -1,14 +1,18 @@
-# Basic example of Python for data handling (extend as needed)
-def get_resources():
-    resources = [
-        {"name": "National Inquiry into Missing and Murdered Indigenous Women and Girls", "url": "https://www.mmiwg-ffada.ca"},
-        {"name": "Indian Residential Schools Crisis Line", "url": "https://www.irsss.ca"},
-        {"name": "Assembly of First Nations", "url": "https://www.afn.ca"},
-        {"name": "Indigenous Services Canada", "url": "https://www.sac-isc.gc.ca"}
-    ]
-    return resources
+import os
 
+def generate_gallery_html(image_dir):
+    """
+    Generate HTML for the gallery images dynamically.
+    Place image files in the specified directory to populate the gallery.
+    """
+    images = [f for f in os.listdir(image_dir) if f.lower().endswith(('png', 'jpg', 'jpeg', 'gif'))]
+    html_snippet = ""
+    for image in images:
+        html_snippet += f'<img src="{image_dir}/{image}" alt="{os.path.splitext(image)[0]}">\n'
+    return html_snippet
 
+# Example usage
 if __name__ == "__main__":
-    for resource in get_resources():
-        print(f"{resource['name']}: {resource['url']}")
+    image_directory = "images"  # Replace with your actual directory
+    gallery_html = generate_gallery_html(image_directory)
+    print(gallery_html)
