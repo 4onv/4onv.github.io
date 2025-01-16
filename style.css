@@ -1,54 +1,68 @@
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 header {
-    background: #1e3d58;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #4CAF50;
+    color: white;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+    padding: 1rem 0;
 }
 
 main {
-    padding: 2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-section {
-    margin-bottom: 2rem;
+.section {
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #1e3d58;
+h1, h2 {
+    color: #4CAF50;
 }
 
-.image-gallery {
+ul.links {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.links li {
+    margin: 10px 0;
+}
+
+ul.links a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+ul.links a:hover {
+    text-decoration: underline;
+}
+
+.gallery {
     display: flex;
-    justify-content: space-around;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
-.image-gallery img {
-    max-width: 30%;
-    height: auto;
-    margin: 10px;
-    border: 1px solid #ccc;
+.gallery img {
+    width: 30%;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background: #1e3d58;
-    color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
 }
