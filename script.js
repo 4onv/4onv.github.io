@@ -1,43 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const timelineItems = document.querySelectorAll(".timeline li");
-    const timelineContent = document.getElementById("timeline-content");
+    const timelineItems = document.querySelectorAll(".timeline-item");
 
     const events = {
-        "1800s": {
-            title: "Early Colonization",
-            description: "The arrival of European settlers marked the beginning of systematic efforts to assimilate Indigenous peoples."
-        },
-        "1876": {
-            title: "Indian Act",
-            description: "The Indian Act was enacted to control and assimilate Indigenous populations, laying the groundwork for residential schools."
-        },
-        "1931": {
-            title: "Peak of Residential Schools",
-            description: "By this year, over 80 residential schools were operating across Canada, causing irreparable harm to Indigenous communities."
-        },
-        "1996": {
-            title: "Last Residential School Closed",
-            description: "The last federally operated residential school, Gordon Indian Residential School, was closed."
-        },
-        "2008": {
-            title: "Government Apology",
-            description: "The Canadian government formally apologized for its role in residential schools under Prime Minister Stephen Harper."
-        },
-        "2021": {
-            title: "Discovery of Graves",
-            description: "Unmarked graves of Indigenous children were discovered, shedding light on the atrocities of residential schools."
-        }
+        "1800s": "Colonization began with settlers forcing Indigenous people off their land.",
+        "1876": "The Indian Act passed, formalizing assimilation practices.",
+        "1931": "Residential schools peaked, with over 80 institutions.",
+        "1996": "The last residential school closed, marking an end to the system."
     };
 
     timelineItems.forEach((item) => {
-        item.addEventListener("mouseover", () => {
-            const year = item.getAttribute("data-year");
-            if (events[year]) {
-                timelineContent.innerHTML = `
-                    <h3>${events[year].title}</h3>
-                    <p>${events[year].description}</p>
-                `;
-            }
+        item.addEventListener("click", () => {
+            alert(`${item.innerText}: ${events[item.dataset.year]}`);
         });
     });
 });
