@@ -1,12 +1,26 @@
+// Add interactivity for better user experience
 document.addEventListener("DOMContentLoaded", () => {
-    const timelineButtons = document.querySelectorAll(".timeline-btn");
+    // Smooth scrolling for internal links
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
 
-    timelineButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const details = btn.nextElementSibling;
-            const isVisible = details.style.display === "block";
-            document.querySelectorAll(".timeline-details").forEach((el) => (el.style.display = "none"));
-            details.style.display = isVisible ? "none" : "block";
+    // Gallery hover effect
+    const galleryImages = document.querySelectorAll(".gallery img");
+    galleryImages.forEach(img => {
+        img.addEventListener("mouseover", () => {
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "transform 0.3s ease";
+        });
+        img.addEventListener("mouseout", () => {
+            img.style.transform = "scale(1)";
         });
     });
 });
