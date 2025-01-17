@@ -1,5 +1,6 @@
-/* General Styles */
+/* Add flower decorations on the sides */
 body {
+    position: relative;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,46 +9,24 @@ body {
     line-height: 1.6;
 }
 
-/* Header with background image and blur effect */
-header {
-    position: relative;
-    background: url('header-background.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-header::before {
-    content: "";
-    position: absolute;
+body::before, body::after {
+    content: '';
+    position: fixed;
     top: 0;
-    left: 0;
+    width: 100px; /* Adjust width of the decoration */
+    height: 100%;
+    background: url('flowers-left.png') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+body::after {
     right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    backdrop-filter: blur(4px); /* Blur effect */
-    z-index: 1;
+    background: url('flowers-right.png') no-repeat center center/cover;
+    left: auto;
 }
 
-header .header-content {
-    position: relative;
-    z-index: 2; /* Text appears above blur */
-    max-width: 900px;
-    margin: auto;
-}
-
-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin: 0;
-    opacity: 0.9;
-}
-
-/* Section Styles */
+/* Section Styles (adjusted for spacing) */
 .section {
     padding: 20px 10px;
     max-width: 900px;
@@ -58,55 +37,58 @@ header p {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #4caf50;
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-/* Gallery */
-.gallery {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
+/* Timeline Interactive Section */
+.timeline-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-/* Video Section */
-.video-container {
+.timeline {
+    position: relative;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.timeline li {
+    position: relative;
+    flex: 0 0 auto;
+    width: 150px;
     text-align: center;
-    padding: 10px;
+    cursor: pointer;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #4caf50;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    display: none;
+    text-align: center;
+    padding: 20px;
     background: #eee;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 
-/* Footer */
-footer {
-    background: #4caf50;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: #c8e6c9;
+.timeline li:hover + .timeline-content {
+    display: block;
 }
