@@ -1,26 +1,43 @@
-// Add interactivity for better user experience
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for internal links
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-        });
-    });
+    const timelineItems = document.querySelectorAll(".timeline li");
+    const timelineContent = document.getElementById("timeline-content");
 
-    // Gallery hover effect
-    const galleryImages = document.querySelectorAll(".gallery img");
-    galleryImages.forEach(img => {
-        img.addEventListener("mouseover", () => {
-            img.style.transform = "scale(1.1)";
-            img.style.transition = "transform 0.3s ease";
-        });
-        img.addEventListener("mouseout", () => {
-            img.style.transform = "scale(1)";
+    const events = {
+        "1800s": {
+            title: "Early Colonization",
+            description: "The arrival of European settlers marked the beginning of systematic efforts to assimilate Indigenous peoples."
+        },
+        "1876": {
+            title: "Indian Act",
+            description: "The Indian Act was enacted to control and assimilate Indigenous populations, laying the groundwork for residential schools."
+        },
+        "1931": {
+            title: "Peak of Residential Schools",
+            description: "By this year, over 80 residential schools were operating across Canada, causing irreparable harm to Indigenous communities."
+        },
+        "1996": {
+            title: "Last Residential School Closed",
+            description: "The last federally operated residential school, Gordon Indian Residential School, was closed."
+        },
+        "2008": {
+            title: "Government Apology",
+            description: "The Canadian government formally apologized for its role in residential schools under Prime Minister Stephen Harper."
+        },
+        "2021": {
+            title: "Discovery of Graves",
+            description: "Unmarked graves of Indigenous children were discovered, shedding light on the atrocities of residential schools."
+        }
+    };
+
+    timelineItems.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            const year = item.getAttribute("data-year");
+            if (events[year]) {
+                timelineContent.innerHTML = `
+                    <h3>${events[year].title}</h3>
+                    <p>${events[year].description}</p>
+                `;
+            }
         });
     });
 });
