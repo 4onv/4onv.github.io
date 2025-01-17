@@ -11,8 +11,6 @@ body {
 header {
     position: relative;
     background: url('header-bg.jpg') no-repeat center center/cover;
-    background-size: cover;
-    filter: blur(5px);
     height: 300px;
     display: flex;
     justify-content: center;
@@ -20,10 +18,25 @@ header {
 }
 
 header h1 {
-    position: absolute;
     color: white;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4caf50;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 /* Gallery */
@@ -39,27 +52,19 @@ header h1 {
     transform: scale(1.1);
 }
 
-/* Timeline Section */
-.timeline-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* Timeline */
 .timeline {
     display: flex;
     overflow-x: auto;
+    padding: 10px;
     scrollbar-width: thin;
 }
 
 .timeline-item {
     flex: 0 0 auto;
     width: 150px;
-    text-align: center;
     margin: 10px;
+    text-align: center;
     background: #e0f7fa;
     padding: 10px;
     border-radius: 5px;
