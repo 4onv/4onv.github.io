@@ -1,17 +1,14 @@
-# Script to generate header HTML with a custom background
-def generate_header(image_path, title, subtitle):
-    return f"""
-<header style="background: url('{image_path}') no-repeat center center/cover;">
-    <div class="header-content">
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-    </div>
-</header>
-"""
+import json
 
-# Example usage
+def generate_timeline_data():
+    data = {
+        "1800s": "Colonization began with settlers forcing Indigenous people off their land.",
+        "1876": "The Indian Act passed, formalizing assimilation practices.",
+        "1931": "Residential schools peaked, with over 80 institutions.",
+        "1996": "The last residential school closed, marking an end to the system."
+    }
+    with open("timeline.json", "w") as file:
+        json.dump(data, file)
+
 if __name__ == "__main__":
-    header_html = generate_header("header-background.jpg", 
-                                  "Residential Schools Missing Children Help", 
-                                  "Honoring the past, healing the present, and empowering the future.")
-    print(header_html)
+    generate_timeline_data()
