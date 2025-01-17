@@ -1,14 +1,14 @@
-import json
+# Basic example of Python for data handling (extend as needed)
+def get_resources():
+    resources = [
+        {"name": "National Inquiry into Missing and Murdered Indigenous Women and Girls", "url": "https://www.mmiwg-ffada.ca"},
+        {"name": "Indian Residential Schools Crisis Line", "url": "https://www.irsss.ca"},
+        {"name": "Assembly of First Nations", "url": "https://www.afn.ca"},
+        {"name": "Indigenous Services Canada", "url": "https://www.sac-isc.gc.ca"}
+    ]
+    return resources
 
-def generate_timeline_data():
-    data = {
-        "1800s": "Colonization began with settlers forcing Indigenous people off their land.",
-        "1876": "The Indian Act passed, formalizing assimilation practices.",
-        "1931": "Residential schools peaked, with over 80 institutions.",
-        "1996": "The last residential school closed, marking an end to the system."
-    }
-    with open("timeline.json", "w") as file:
-        json.dump(data, file)
 
 if __name__ == "__main__":
-    generate_timeline_data()
+    for resource in get_resources():
+        print(f"{resource['name']}: {resource['url']}")
