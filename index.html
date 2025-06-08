@@ -3,69 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residential Schools Missing Children Help</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Kun Dong's Future Vision Board</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            color: white;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            flex: 1;
+            max-width: 200px;
+        }
+        
+        .timeline-item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: #1a2980;
+            transform: translateY(-50%);
+        }
+        
+        .year {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a2980;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .vision-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            background: #fff;
+        }
+        
+        .vision-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #eaeaea;
+        }
+        
+        .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+            background: #f0f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2980;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1a2980;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-content h3 i {
+            margin-right: 10px;
+            color: #26d0ce;
+        }
+        
+        .card-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .coop-impact {
+            background: #e6f7ff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #26d0ce;
+            margin-top: 10px;
+        }
+        
+        .next-steps {
+            padding: 50px 30px;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            color: white;
+            text-align: center;
+        }
+        
+        .next-steps h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .step-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-card h3 i {
+            margin-right: 10px;
+            color: #26d0ce;
+        }
+        
+        .step-card p {
+            opacity: 0.9;
+        }
+        
+        .quote {
+            padding: 50px 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        
+        .quote blockquote {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #1a2980;
+            position: relative;
+            padding: 0 40px;
+            line-height: 1.8;
+        }
+        
+        .quote blockquote:before,
+        .quote blockquote:after {
+            content: """;
+            font-size: 4rem;
+            position: absolute;
+            color: #26d0ce;
+            opacity: 0.3;
+        }
+        
+        .quote blockquote:before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .quote blockquote:after {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a2980;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .vision-board {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote blockquote {
+                font-size: 1.4rem;
+                padding: 0 20px;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline-item:not(:last-child):after {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Residential Schools Missing Children</h1>
-            <p>Honoring the past, healing the present, and empowering the future.</p>
-        </div>
-    </header>
-    <main>
-        <section id="issue" class="section">
-            <h2>History, Context, Reconciliation</h2>
-            <p>The history of residential schools in Canada stands as a profoundly painful and dark chapter, it shows the problematic systemic oppression towards the Indigenous communities. From the late 19th century well into the 20th century, thousands of Indigenous children were forcibly removed from their families, stripped completely, of their cultural identities, and subjected to relentless humiliation. The residential schools were institutions where children experienced severe physical, emotional, and psychological abuse, leading to lifelong trauma. Tragically, many children never returned home, with numerous unmarked burial sites only now coming to light.</p>
-            <p>This legacy is not merely a historical wrongdoing; it is a present-day reminder of the ongoing injustices and challenges faced by Indigenous peoples. The unearthing of these burial sites has triggered deep sorrow and has accentuated the continuous need for reconciliation and healing within these communities. The pain inflicted by these institutions reverberates through generations, manifesting in intergenerational trauma and loss of cultural heritage.</p>
-            <p>It is not as easy as it seems, It requires a collective effort to educate, empathize, and take actionable steps towards reconciliation. By delving into and confronting this history, we pay homage to the resilience of survivors and those who were lost, while still creating a collective responsibility to ensure such atrocities never recur. This journey towards reconciliation is integral to the healing process and the restoration of dignity, identity, and heritage that were stripped away with our very own hands.</p>
-        </section>
-        <section id="resources" class="section">
-            <h2>Get Help</h2>
-            <p>If you or someone you know is in need of support, the following organizations provide resources and assistance specifically for Indigenous individuals:</p>
-            <ul class="links">
-                <li><a href="https://www.mmiwg-ffada.ca" target="_blank">National Inquiry into Missing and Murdered Indigenous Women and Girls</a></li>
-                <li><a href="https://www.irsss.ca" target="_blank">Indian Residential Schools Crisis Line</a></li>
-                <li><a href="https://www.afn.ca" target="_blank">Assembly of First Nations</a></li>
-                <li><a href="https://www.sac-isc.gc.ca" target="_blank">Indigenous Services Canada</a></li>
-            </ul>
-        </section>
-        <section id="give-help" class="section">
-            <h2>Give Help</h2>
-            <p>Non-Indigenous allies can make a meaningful difference by supporting initiatives that aim to heal and rebuild Indigenous communities. Donations help fund education, mental health support, and cultural preservation programs.</p>
-            <ul class="links">
-                <li><a href="https://www.canadahelps.org/en/charities/reconciliation-canada-a-new-way-forward-society/" target="_blank">Donate to Support Indigenous Communities</a></li>
-            </ul>
-        </section>
-        <section id="video" class="section">
-            <h2>Educational Video</h2>
-            <p>Understanding the issue is a vital step toward making a change. Watch this educational video to learn more about the history and impact of residential schools:</p>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/dC3-Acim1VY" 
-                    frameborder="0" 
-                    allow="accelerometer;autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+    <div class="container">
+        <header>
+            <h1>Engineering & Entrepreneurship Vision</h1>
+            <p class="subtitle">Kun Dong's 10-Year Blueprint: Chemical Engineering Meets Business Innovation</p>
+        </header>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="year">2024</div>
+                <div class="timeline-content">Water Solutions Internship</div>
             </div>
-        </section>
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <p>Visual documentation is a powerful tool in preserving history and fostering understanding. Below are images that shed light on the history of residential schools and ongoing efforts for reconciliation:</p>
-            <div class="gallery">
-                <!-- Replace the src attributes with links to your real images -->
-                <img src="https://static01.nyt.com/images/2021/06/28/world/00INDIGENOUS-SCHOOLS1/00INDIGENOUS-SCHOOLS1-superJumbo.jpg" alt="Historical Residential School">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0e/c3/58/the-sanctuary.jpg?w=1200&h=-1&s=1" alt="Memorial for Missing Children">
-                <img src="https://i.ytimg.com/vi/r_-IpTxfyYw/maxresdefault.jpg" alt="Indigenous Community in Healing">
+            <div class="timeline-item">
+                <div class="year">2025</div>
+                <div class="timeline-content">Top University Admission</div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Residential Schools Missing Children. All rights reserved.</p>
-            <p>We are dedicated to creating awareness and providing support for Indigenous communities. <a href="#contact">Contact us</a> for more information.</p>
+            <div class="timeline-item">
+                <div class="year">2026</div>
+                <div class="timeline-content">First Business Venture</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2028</div>
+                <div class="timeline-content">Multiple Co-op Experiences</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2030</div>
+                <div class="timeline-content">Graduate Studies</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2034</div>
+                <div class="timeline-content">$150K+ Career + Business</div>
+            </div>
         </div>
-    </footer>
+        
+        <div class="vision-board">
+            <!-- Vision Card 1 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: grade12_internship.jpg<br>(Chemical engineering intern at water treatment facility)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-flask"></i> Grade 12 Internship</h3>
+                    <p>Secure a chemical engineering internship focused on water purification solutions. Gain hands-on experience in sustainable technology development and environmental impact assessment.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> My pharmacy experience taught me the value of specialized knowledge - I'll apply this same focus to environmental engineering challenges.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Card 2 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: university_admission.jpg<br>(MIT campus with engineering buildings)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-graduation-cap"></i> Elite University Admission</h3>
+                    <p>Get accepted to a top 20-30 university (ideally MIT) for Chemical Engineering while pursuing a dual degree in Business/Finance. Build strong academic foundations and professional networks.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> Managing pharmacy operations showed me how technical and business skills intersect - I'll develop both simultaneously.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Card 3 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: business_launch.jpg<br>(Young entrepreneurs planning with laptops)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-rocket"></i> Business Launch at 18</h3>
+                    <p>Start my first business venture with family funding. Focus on chemical engineering applications - potentially water tech solutions or sustainable materials. Learn entrepreneurship through real-world execution.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> Observing pharmacy profitability models gave me frameworks to evaluate business opportunities and revenue streams.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Card 4 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: coop_experiences.jpg<br>(Diverse engineering work environments)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-briefcase"></i> 6-8 Co-op Experiences</h3>
+                    <p>Complete multiple internships across chemical engineering sectors: energy, pharma, materials science, and environmental tech. Build a strong LinkedIn profile with diverse endorsements.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> My first co-op taught me that practical experience accelerates learning more than coursework alone.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Card 5 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: graduate_studies.jpg<br>(Graduate engineering research lab)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-atom"></i> Dual Master's Degrees</h3>
+                    <p>Pursue concurrent Master's in Chemical and Mechanical Engineering. Focus on advanced materials or sustainable energy systems. Leverage business knowledge to commercialize research.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> Pharmacy compounding showed me how specialized knowledge creates competitive advantages.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Card 6 -->
+            <div class="vision-card">
+                <div class="card-image">
+                    <div>Image: career_success.jpg<br>(Professional with financial charts and city skyline)</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-chart-line"></i> $150K+ Career + Business</h3>
+                    <p>Earn a base salary of $150K+ in the chemical engineering field while maintaining business ownership. Target roles in renewable energy, advanced materials, or water technology sectors.</p>
+                    <div class="coop-impact">
+                        <strong>Co-op Insight:</strong> Seeing pharmacy owners balance clinical work with business management inspired my dual-career approach.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="next-steps">
+            <h2>Execution Strategy</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3><i class="fas fa-search"></i> Immediate Action</h3>
+                    <p>Apply to water technology internships for summer 2024. Network with environmental engineering professionals on LinkedIn.</p>
+                </div>
+                <div class="step-card">
+                    <h3><i class="fas fa-edit"></i> University Prep</h3>
+                    <p>Strengthen STEM application with advanced chemistry/physics courses. Develop compelling personal statement about engineering-business intersection.</p>
+                </div>
+                <div class="step-card">
+                    <h3><i class="fas fa-lightbulb"></i> Business Planning</h3>
+                    <p>Research chemical engineering startups. Develop business concept with parents' guidance. Attend entrepreneurship workshops.</p>
+                </div>
+                <div class="step-card">
+                    <h3><i class="fas fa-network-wired"></i> Career Development</h3>
+                    <p>Create co-op target list. Build relationships with university career services. Attend engineering career fairs starting freshman year.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote">
+            <blockquote>
+                "My pharmacy co-op taught me that specialized skills + business acumen = unlimited potential. I'll engineer solutions to global challenges while building ventures that create value and impact."
+            </blockquote>
+        </div>
+        
+        <footer>
+            <p>Created with purpose | Kun Dong's Vision Board | 2023</p>
+            <p>Co-op Placement: Shoppers Drug Mart Pharmacy | Teacher: Mr. Chu</p>
+        </footer>
+    </div>
 </body>
 </html>
